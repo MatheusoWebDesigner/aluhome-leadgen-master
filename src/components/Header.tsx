@@ -44,7 +44,11 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors"
+            className={`text-2xl font-bold transition-colors ${
+              isScrolled
+                ? "text-primary hover:text-primary/90"
+                : "text-white hover:text-white/90"
+            }`}
           >
             AluHome
           </button>
@@ -55,7 +59,11 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  isScrolled
+                    ? "text-foreground/80 hover:text-primary"
+                    : "text-white/90 hover:text-white"
+                }`}
               >
                 {item.label}
               </button>
@@ -75,7 +83,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground p-2"
+            className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,7 +98,11 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium text-left py-2"
+                  className={`transition-colors font-medium text-left py-2 ${
+                    isScrolled
+                      ? "text-foreground/80 hover:text-primary"
+                      : "text-white/90 hover:text-white"
+                  }`}
                 >
                   {item.label}
                 </button>
