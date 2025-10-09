@@ -18,7 +18,7 @@ const Hero = () => {
           Esquadrias de Alumínio que Transformam seu Espaço
         </h1>
         
-        <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed text-left font-extralight">
           Soluções sob medida com design sofisticado e qualidade premium. Consultoria gratuita em toda São Paulo.
         </p>
 

@@ -1,43 +1,30 @@
 import { ClipboardCheck, Wrench, Truck } from "lucide-react";
-
 const Process = () => {
-  const steps = [
-    {
-      icon: ClipboardCheck,
-      title: "Consultoria e Análise Técnica",
-      description: "Agendamos uma visita técnica gratuita para entender seu projeto, tirar medidas precisas e responder a todas as suas dúvidas."
-    },
-    {
-      icon: Wrench,
-      title: "Proposta e Fabricação Sob Medida",
-      description: "Apresentamos uma proposta transparente. Após sua aprovação, iniciamos a fabricação de suas esquadrias com precisão milimétrica e alumínio de alto padrão."
-    },
-    {
-      icon: Truck,
-      title: "Entrega Rápida e Segura",
-      description: "Com frota própria e parceiros, garantimos uma entrega pontual diretamente na sua obra, respeitando o seu cronograma."
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-background">
+  const steps = [{
+    icon: ClipboardCheck,
+    title: "Consultoria e Análise Técnica",
+    description: "Agendamos uma visita técnica gratuita para entender seu projeto, tirar medidas precisas e responder a todas as suas dúvidas."
+  }, {
+    icon: Wrench,
+    title: "Proposta e Fabricação Sob Medida",
+    description: "Apresentamos uma proposta transparente. Após sua aprovação, iniciamos a fabricação de suas esquadrias com precisão milimétrica e alumínio de alto padrão."
+  }, {
+    icon: Truck,
+    title: "Entrega Rápida e Segura",
+    description: "Com frota própria e parceiros, garantimos uma entrega pontual diretamente na sua obra, respeitando o seu cronograma."
+  }];
+  return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-center text-foreground mb-16">
+        <h2 className="text-center text-foreground mb-16 text-2xl">
           Seu Projeto em 3 Passos Simples
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div 
-                key={index}
-                className="relative group"
-              >
+          const Icon = step.icon;
+          return <div key={index} className="relative group">
                 {/* Connector Line (hidden on mobile) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-border z-0"></div>
-                )}
+                {index < steps.length - 1 && <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-border z-0"></div>}
 
                 {/* Card */}
                 <div className="relative bg-white p-8 rounded-xl shadow-elegant transition-smooth hover:shadow-hover z-10">
@@ -59,13 +46,10 @@ const Process = () => {
                     {step.description}
                   </p>
                 </div>
-              </div>
-            );
-          })}
+              </div>;
+        })}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Process;
