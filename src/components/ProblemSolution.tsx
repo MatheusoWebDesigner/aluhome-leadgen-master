@@ -1,34 +1,21 @@
 import { X, Check } from "lucide-react";
-
 const ProblemSolution = () => {
-  const problems = [
-    "A incerteza sobre qual linha de produto é a mais adequada para sua necessidade.",
-    "O receio de investir em um produto que não se harmoniza com seu projeto arquitetônico.",
-    "A dificuldade em navegar por termos técnicos sem a orientação de um especialista.",
-    "A preocupação com a qualidade do material e a pontualidade da entrega."
-  ];
-
-  return (
-    <section className="py-20 bg-muted">
+  const problems = ["A incerteza sobre qual linha de produto é a mais adequada para sua necessidade.", "O receio de investir em um produto que não se harmoniza com seu projeto arquitetônico.", "A dificuldade em navegar por termos técnicos sem a orientação de um especialista.", "A preocupação com a qualidade do material e a pontualidade da entrega."];
+  return <section className="py-20 bg-muted">
       <div className="container mx-auto px-6">
         {/* Problem Section */}
         <div className="mb-16">
-          <h2 className="text-center md:text-left text-foreground mb-12">
+          <h2 className="text-center md:text-left text-foreground mb-12 text-4xl">
             Escolher Esquadrias Não Deveria Ser uma Dor de Cabeça
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {problems.map((problem, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm transition-smooth hover:shadow-elegant"
-              >
+            {problems.map((problem, index) => <div key={index} className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm transition-smooth hover:shadow-elegant">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center mt-1">
                   <X className="w-4 h-4 text-destructive" />
                 </div>
                 <p className="text-muted-foreground leading-relaxed text-left">{problem}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -51,8 +38,6 @@ const ProblemSolution = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProblemSolution;

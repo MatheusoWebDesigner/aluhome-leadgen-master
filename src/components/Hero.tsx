@@ -1,18 +1,14 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-esquadrias.jpg";
-
 const Hero = () => {
   const handleCTA = () => {
     window.open('https://wa.me/5511920339135?text=Olá!%20Gostaria%20de%20solicitar%20uma%20consultoria%20gratuita.', '_blank');
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBackground})`
+    }}>
         <div className="absolute inset-0 gradient-overlay"></div>
       </div>
 
@@ -22,16 +18,11 @@ const Hero = () => {
           Esquadrias de Alumínio que Transformam seu Espaço
         </h1>
         
-        <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed text-center">
           Soluções sob medida com design sofisticado e qualidade premium. Consultoria gratuita em toda São Paulo.
         </p>
 
-        <Button 
-          size="lg" 
-          variant="cta"
-          onClick={handleCTA}
-          className="animate-fade-in"
-        >
+        <Button size="lg" variant="cta" onClick={handleCTA} className="animate-fade-in">
           Faça um Orçamento
         </Button>
       </div>
@@ -42,8 +33,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/50 rounded-full"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
