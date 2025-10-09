@@ -5,7 +5,7 @@ const ProblemSolution = () => {
       <div className="container mx-auto px-6">
         {/* Problem Section */}
         <div className="mb-16">
-          <h2 className="text-center md:text-left text-foreground mb-12 text-4xl">
+          <h2 className="text-center md:text-left text-foreground mb-12 text-4xl my-[40px]">
             Escolher Esquadrias Não Deveria Ser uma Dor de Cabeça
           </h2>
           

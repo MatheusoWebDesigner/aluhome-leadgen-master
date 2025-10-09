@@ -41,7 +41,7 @@ const Products = () => {
         </h2>
         
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
+        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-12 mx-0 my-[20px]">
           {categories.map(category => <Button key={category} variant={filter === category ? "default" : "outline"} onClick={() => setFilter(category)} className="transition-smooth">
               {category}
             </Button>)}
