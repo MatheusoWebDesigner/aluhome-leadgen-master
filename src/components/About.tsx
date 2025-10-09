@@ -3,7 +3,7 @@ const About = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-left text-foreground mb-8 md:mb-12 leading-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-8 md:mb-12 leading-tight">
             Sobre a <span className="text-primary">AluHome</span>
           </h2>
           

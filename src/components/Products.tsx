@@ -12,24 +12,32 @@ const Products = () => {
     title: "Porta Pivotante Lambril",
     description: "A entrada imponente que valoriza seu imóvel. Combine segurança, design sofisticado e uma abertura majestosa. Disponível exclusivamente em nossa linha Premium.",
     colors: ["Alumínio Brilhante", "Branco", "Preto"],
+    sizes: ["Sob medida", "Até 3m de altura"],
+    line: "Premium",
     category: "Portas"
   }, {
     image: veneziana,
     title: "Veneziana de Alumínio",
     description: "Controle perfeito de ventilação e privacidade. Design moderno que complementa qualquer fachada com elegância e funcionalidade.",
     colors: ["Alumínio Natural", "Branco", "Cinza"],
+    sizes: ["Sob medida", "Diversos tamanhos"],
+    line: "Modular",
     category: "Venezianas"
   }, {
     image: vitro,
     title: "Vitro de Alumínio",
     description: "Amplie seus espaços com máxima entrada de luz natural. Perfis finos e resistentes que garantem estética minimalista e durabilidade excepcional.",
     colors: ["Alumínio Natural", "Preto", "Bronze"],
+    sizes: ["Sob medida", "Amplas dimensões"],
+    line: "Modular",
     category: "Vitros"
   }, {
     image: persiana,
     title: "Sistema com Persiana Integrada",
     description: "Tecnologia e praticidade em um só produto. Controle de luz e temperatura com design clean e instalação otimizada.",
     colors: ["Branco", "Bege", "Cinza"],
+    sizes: ["Sob medida", "Diversos formatos"],
+    line: "Premium",
     category: "Soluções com Persiana"
   }];
   const categories = ["Todos", "Portas", "Venezianas", "Vitros", "Soluções com Persiana"];
@@ -49,7 +57,7 @@ const Products = () => {
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
-          {filteredProducts.map((product, index) => <ProductGallery key={index} image={product.image} title={product.title} description={product.description} colors={product.colors} />)}
+          {filteredProducts.map((product, index) => <ProductGallery key={index} image={product.image} title={product.title} description={product.description} colors={product.colors} sizes={product.sizes} line={product.line} />)}
         </div>
 
         {/* CTA Buttons */}

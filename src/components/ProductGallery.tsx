@@ -5,9 +5,11 @@ interface ProductGalleryProps {
   title: string;
   description: string;
   colors: string[];
+  sizes: string[];
+  line: string;
 }
 
-const ProductGallery = ({ image, title, description, colors }: ProductGalleryProps) => {
+const ProductGallery = ({ image, title, description, colors, sizes, line }: ProductGalleryProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -33,24 +35,35 @@ const ProductGallery = ({ image, title, description, colors }: ProductGalleryPro
               {description}
             </p>
             
-            <div className="space-y-2">
-              <p className="text-xs font-semibold text-foreground uppercase tracking-wide">
-                Cores Disponíveis:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {colors.slice(0, 2).map((color, idx) => (
-                  <span 
-                    key={idx}
-                    className="text-xs px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium"
-                  >
-                    {color}
-                  </span>
-                ))}
-                {colors.length > 2 && (
-                  <span className="text-xs px-3 py-1.5 bg-muted text-muted-foreground rounded-full">
-                    +{colors.length - 2}
-                  </span>
-                )}
+            <div className="space-y-3">
+              <div>
+                <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+                  Linha:
+                </p>
+                <span className="text-xs px-3 py-1.5 bg-accent/20 text-accent-foreground rounded-full font-medium inline-block">
+                  {line}
+                </span>
+              </div>
+              
+              <div>
+                <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+                  Cores:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {colors.slice(0, 2).map((color, idx) => (
+                    <span 
+                      key={idx}
+                      className="text-xs px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium"
+                    >
+                      {color}
+                    </span>
+                  ))}
+                  {colors.length > 2 && (
+                    <span className="text-xs px-3 py-1.5 bg-muted text-muted-foreground rounded-full">
+                      +{colors.length - 2}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -77,19 +90,46 @@ const ProductGallery = ({ image, title, description, colors }: ProductGalleryPro
               </p>
             </div>
             
-            <div>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-                Cores Disponíveis:
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {colors.map((color, idx) => (
-                  <span 
-                    key={idx}
-                    className="text-sm px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium"
-                  >
-                    {color}
-                  </span>
-                ))}
+            <div className="space-y-5">
+              <div>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                  Linha do Produto:
+                </h3>
+                <span className="text-sm px-4 py-2 bg-accent/20 text-accent-foreground rounded-lg font-medium inline-block">
+                  {line}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                  Tamanhos:
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {sizes.map((size, idx) => (
+                    <span 
+                      key={idx}
+                      className="text-sm px-4 py-2 bg-secondary/10 text-secondary-foreground rounded-lg font-medium"
+                    >
+                      {size}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                  Cores Disponíveis:
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {colors.map((color, idx) => (
+                    <span 
+                      key={idx}
+                      className="text-sm px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium"
+                    >
+                      {color}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
             
