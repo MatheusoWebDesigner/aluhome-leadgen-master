@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-esquadrias.jpg";
 
 const Hero = () => {
   const handleCTA = () => {
@@ -18,12 +18,12 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
-        <h1 className="text-white mb-6 leading-tight max-w-5xl mx-auto">
-          Esquadrias de Alumínio Premium que Definem seu Espaço. Design e Tecnologia Feitos para Durar.
+        <h1 className="text-white mb-6 leading-tight max-w-4xl mx-auto">
+          Esquadrias de Alumínio que Transformam seu Espaço
         </h1>
         
-        <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-          Deixe a complexidade conosco. Nossa equipe de especialistas vai até você em toda São Paulo para garantir a escolha ideal em portas e janelas de alumínio, sob medida para o seu projeto e seu orçamento.
+        <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Soluções sob medida com design sofisticado e qualidade premium. Consultoria gratuita em toda São Paulo.
         </p>
 
         <Button 
@@ -32,7 +32,7 @@ const Hero = () => {
           onClick={handleCTA}
           className="animate-fade-in"
         >
-          Solicite uma Consultoria Gratuita
+          Faça um Orçamento
         </Button>
       </div>
 

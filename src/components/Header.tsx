@@ -24,6 +24,7 @@ const Header = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
+    { label: "Sobre", id: "sobre" },
     { label: "Processo", id: "processo" },
     { label: "Produtos", id: "produtos" },
     { label: "Diferenciais", id: "diferenciais" },
@@ -76,7 +77,7 @@ const Header = () => {
               variant="cta"
               onClick={() => scrollToSection("contato")}
             >
-              Solicitar Consultoria
+              Faça um Orçamento
             </Button>
           </div>
 
@@ -112,7 +113,7 @@ const Header = () => {
                 onClick={() => scrollToSection("contato")}
                 className="mt-2"
               >
-                Solicitar Consultoria
+                Faça um Orçamento
               </Button>
             </div>
           </nav>

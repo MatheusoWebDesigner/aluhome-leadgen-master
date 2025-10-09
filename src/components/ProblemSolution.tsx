@@ -13,11 +13,11 @@ const ProblemSolution = () => {
       <div className="container mx-auto px-6">
         {/* Problem Section */}
         <div className="mb-16">
-          <h2 className="text-center text-foreground mb-12">
+          <h2 className="text-center md:text-left text-foreground mb-12">
             Escolher Esquadrias Não Deveria Ser uma Dor de Cabeça
           </h2>
           
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {problems.map((problem, index) => (
               <div 
                 key={index}
@@ -26,7 +26,7 @@ const ProblemSolution = () => {
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center mt-1">
                   <X className="w-4 h-4 text-destructive" />
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{problem}</p>
+                <p className="text-muted-foreground leading-relaxed text-left">{problem}</p>
               </div>
             ))}
           </div>

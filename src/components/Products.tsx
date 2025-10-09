@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import ProductGallery from "@/components/ProductGallery";
 import portaPivotante from "@/assets/product-porta-pivotante.jpg";
 import veneziana from "@/assets/product-veneziana.jpg";
 import vitro from "@/assets/product-vitro.jpg";
@@ -48,12 +49,12 @@ const Products = () => {
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-6">
-        <h2 className="text-center text-foreground mb-4">
+        <h2 className="text-center md:text-left text-foreground mb-4">
           Um Universo de Possibilidades para o Seu Lar
         </h2>
         
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
           {categories.map((category) => (
             <Button
               key={category}
@@ -67,50 +68,20 @@ const Products = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
           {filteredProducts.map((product, index) => (
-            <div 
+            <ProductGallery
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-elegant transition-smooth hover:shadow-hover group"
-            >
-              <div className="relative overflow-hidden aspect-[4/5]">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {product.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  {product.description}
-                </p>
-                
-                <div className="space-y-2">
-                  <p className="text-xs font-semibold text-foreground uppercase tracking-wide">
-                    Cores Disponíveis:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {product.colors.map((color, idx) => (
-                      <span 
-                        key={idx}
-                        className="text-xs px-3 py-1 bg-muted rounded-full text-muted-foreground"
-                      >
-                        {color}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+              image={product.image}
+              title={product.title}
+              description={product.description}
+              colors={product.colors}
+            />
           ))}
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4">
           <Button 
             variant="hero" 
             size="lg"
