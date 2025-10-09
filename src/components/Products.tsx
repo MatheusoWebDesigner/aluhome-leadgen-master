@@ -44,7 +44,7 @@ const Products = () => {
   const filteredProducts = filter === "Todos" ? products : products.filter(p => p.category === filter);
   return <section className="py-20 bg-muted">
       <div className="container mx-auto px-6">
-        <h2 className="text-center text-foreground mb-4 text-4xl md:text-center">
+        <h2 className="text-center text-foreground mb-4 text-4xl md:text-center my-[40px]">
           Um Universo de Possibilidades para o Seu Lar
         </h2>
         
