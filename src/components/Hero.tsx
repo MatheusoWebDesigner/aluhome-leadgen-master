@@ -16,10 +16,9 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Carousel */}
       <Carousel
-        className="absolute inset-0"
+        className="absolute inset-0 w-full h-full"
         opts={{
           loop: true,
-          align: "start",
         }}
         plugins={[
           Autoplay({
@@ -28,11 +27,11 @@ const Hero = () => {
           }),
         ]}
       >
-        <CarouselContent>
+        <CarouselContent className="h-full">
           {heroImages.map((image, index) => (
-            <CarouselItem key={index} className="min-w-full">
+            <CarouselItem key={index} className="min-w-full h-screen relative">
               <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
+                className="w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{
                   backgroundImage: `url(${image})`,
                 }}
