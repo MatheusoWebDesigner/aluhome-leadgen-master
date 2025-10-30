@@ -1,16 +1,48 @@
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import heroBackground from "@/assets/hero-esquadrias.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
 const Hero = () => {
+  const heroImages = [heroBackground, heroSlide1, heroSlide2, heroSlide3];
+
   const handleCTA = () => {
     window.open('https://wa.me/5511920339135?text=Olá!%20Gostaria%20de%20solicitar%20uma%20consultoria%20gratuita.', '_blank');
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBackground})`
-    }}>
-        <div className="absolute inset-0 gradient-overlay"></div>
-      </div>
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Carousel */}
+      <Carousel
+        className="absolute inset-0"
+        opts={{
+          loop: true,
+          align: "start",
+        }}
+        plugins={[
+          Autoplay({
+            delay: 5000,
+            stopOnInteraction: false,
+          }),
+        ]}
+      >
+        <CarouselContent>
+          {heroImages.map((image, index) => (
+            <CarouselItem key={index} className="min-w-full">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
+                style={{
+                  backgroundImage: `url(${image})`,
+                }}
+              >
+                <div className="absolute inset-0 gradient-overlay"></div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
@@ -28,11 +60,12 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-3 bg-white/50 rounded-full"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
